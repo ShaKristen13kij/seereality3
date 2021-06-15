@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 开关 -->
+    <style name="SwitchViewStyle">
+        <item name="android:layout_width">45dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:visibility">visible</item>
+    </style>
+
+    <declare-styleable name="titleNavView">
+        <!-- 导航视图的显示方式， -->
+        <attr name="navViewType" format="enum">
+            <!-- 水平方式,长方型 ,默认为水平方式-->
+            <enum name="horizontal" value="0" />
+            <!--  垂直方向，方型-->
+            <enum name="vertical" value="1" />
+        </attr>
+        <!-- 导航颜色 -->
+        <attr name="navBackageColor" format="color|reference" />
+        <!-- 是否显示红点 -->
+        <attr name="isShowDotType" format="enum">
+            <!-- 红点 -->
+            <enum name="dot" value="0" />
+            <!-- 自定义提示图片，需要结合isShowDotPic属性共同使用 -->
+            <enum name="custom" value="1" />
+            <!-- 不显示 -->
+            <enum name="none" value="2" />
+        </attr>
+        <!-- 自定义红点提示的图片 -->
+        <attr name="isShowDotPic" format="integer|reference" />
+        <!-- 设置总高度 -->
+        <attr name="navHeight" format="dimension|reference" />
+        <!-- 是否显示前面的图片-->
+        <attr name="isShowIcon" format="boolean" />
+        <attr name="scale_Type" format="enum">
+            <enum name="Fit_Center" value="0"/>
+            <enum name="Fit_Start" value="1"/>
+            <enum name="Fit_XY" value="2"/>
+            <enum name="Fit_End" value="3"/>
+            <enum name="Matrix" value="4"/>
+            <enum name="Center_Inside" value="5"/>
+            <enum name="Center" value="6"/>
+            <enum name="Center_Crop" value="7"/>
+        </attr>
+        <!-- 图标的高 -->
+        <!--<attr name="icon_height" format="dimension|reference"/>-->
+        <!-- 图标的宽 -->
+        <!--<attr name="icon_width" format="dimension|reference"/>-->
+        <!-- 设置图片的左边距-->
+        <attr name="iconMarginLeft" format="dimension|reference" />
+        <!-- 设置图片的上方距*****************************-->
+        <attr name="iconMarginTop" format="dimension|reference" />
+        <!-- 设置图片的底部距离**************************-->
+        <attr name="iconMarginBottom" format="dimension|reference" />
+        <!-- 设置图片的又边距-->
+        <attr name="iconMarginRight" format="dimension|reference" />
+        <!-- 设置图片资源-->
+        <attr name="iconResource" format="integer|reference" />
+        <!-- 设置图片资源的Padding信息-->
+        <attr name="iconPadding" format="dimension"/>
+        <attr name="iconPaddingLeft" format="dimension"/>
+        <attr name="iconPaddingRight" format="dimension"/>
+        <attr name="iconPaddingTop" format="dimension"/>
+        <attr name="iconPaddingBottom" format="dimension"/>
+
+        <!--设置标题的文字 -->
+        <attr name="titlesText" format="string|reference" />
+        <!-- 设置文字的大小-->
+        <attr name="titlesTextSize" format="dimension" />
+        <!-- 设置文字标题的左间距-->
+        <attr name="titlesTextMarginLeft" format="dimension" />
+        <!-- 设置文字标题的右间距-->
+        <attr name="titlesTextMarginRight" format="dimension" />
+        <!-- 设置文字标题的上间距***************************************-->
+        <attr name="titlesTextMarginTop" format="dimension" />
+        <!-- 设置文字标题的底部间距***************************************-->
+        <attr name="titlesTextMarginBottom" format="dimension" />
+        <!-- 设置文字颜色-->
+        <attr name="titlesTextColor" format="color|reference" />
+        <!-- 尾部是显示箭头还是显示开关 -->
+        <attr name="isShowType" format="enum">
+            <!-- 显示尾部箭头-->
+            <enum name="arrowType" value="0" />
+            <!-- 是否显示开关按钮，当显示开关按钮就不会显示尾部箭头 -->
+            <enum name="switchType" value="1" />
+            <!-- 显示文字 -->
+            <enum name="fontType" value="2" />
+            <!-- 什么都不显示。 -->
+            <enum name="none" value="3" />
+        </attr>
+        <!-- 在显示开关的时候、是否默认打开开关 -->
+        <attr name="switchOpen" format="boolean" />
+        <!-- 功能性描述文字的显示方向 -->
+        <attr name="showDescType" format="enum">
+            <enum name="vertical" value="0" />
+            <enum name="horizontal" value="1" />
+        </attr>
+        <!-- 功能说明的文字   跟在主标题的下面 或者 跟在主标题的后面 根据showDescType进行区分-->
+        <attr name="explainText" format="string|reference" />
+        <!-- 功能说明文字距离左边、右边的距离 -->
+        <attr name="explainTextMarginLeft" format="dimension|reference" />
+        <attr name="explainTextMarginRight" format="dimension|reference" />
+        <!-- 功能说明文字的字体大小 -->
+        <attr name="explainTextSize" format="dimension" />
+        <!-- 右边的文字，当isShowType:为font时可用 -->
+        <attr name="titleRightText" format="string|reference" />
+        <!-- 设置尾部箭头的左边距-->
+        <attr name="arrowMarginLeft" format="dimension|reference" />
+        <!-- 设置尾部箭头的右边距-->
+        <attr name="arrowMarginRight" format="dimension|reference" />
+        <!-- 是否显示附属标题-->
+        <attr name="isShowSubTitles" format="boolean" />
+        <!-- 设置副标题的文字-->
+        <attr name="subTitlesText" format="string|reference" />
+        <!-- 设置副标题的文字大小-->
+        <attr name="subTitlesTextSize" format="dimension" />
+        <!-- 设置副标题的文字颜色-->
+        <attr name="subTitlesTextColor" format="color|reference" />
+        <!-- 设置副标题的左右上下边距-->
+        <attr name="subTitlesMarginLeft" format="dimension|reference" />
+        <attr name="subTitlesMarginRight" format="dimension|reference" />
+        <attr name="subTitlesMarginTop" format="dimension|reference" />
+        <attr name="subTitlesMarginBottom" format="dimension|reference" />
+    </declare-styleable>
+</resources>

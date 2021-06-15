@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.ql.dev.library.TitleNavView
+        android:id="@+id/titleNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:arrowMarginRight="@dimen/space_16"
+        app:iconMarginLeft="16dp"
+        app:iconMarginRight="12dp"
+        app:iconResource="@mipmap/icon_tixinmingxi_mywallet"
+        app:iconPaddingTop="@dimen/space_8"
+        app:iconPaddingBottom="@dimen/space_8"
+        app:titlesText="带图标的按钮"
+        app:isShowDotType="dot"
+        app:titlesTextColor="#08131f"
+        app:titlesTextSize="@dimen/space_14" />
+
+    <com.ql.dev.library.TitleNavView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_12"
+        app:arrowMarginRight="@dimen/space_16"
+        app:iconMarginLeft="16dp"
+        app:iconMarginRight="12dp"
+        app:iconResource="@mipmap/icon_tixinmingxi_mywallet"
+        app:isShowType="none"
+        app:titlesText="带图标的按钮二"
+        app:titlesTextColor="#08131f"
+        app:titlesTextSize="@dimen/space_14" />
+
+    <com.ql.dev.library.TitleNavView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_12"
+        app:iconMarginLeft="16dp"
+        app:arrowMarginLeft="12dp"
+        app:explainText="sdf"
+        app:explainTextMarginLeft="12dp"
+        app:explainTextSize="12sp"
+        app:iconResource="@mipmap/icon_tixinmingxi_mywallet"
+        app:isShowIcon="true"
+        app:isShowSubTitles="true"
+        app:subTitlesText="ssssss"
+        app:isShowType="arrowType"
+        app:titlesText="不带图标的按钮"
+        app:titlesTextColor="@color/common_mine_text_color"
+        app:titlesTextMarginLeft="12sp"
+        app:titlesTextMarginRight="12sp"
+        app:titlesTextSize="14sp" />
+
+
+    <com.ql.dev.library.TitleNavView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_12"
+        app:arrowMarginLeft="12sp"
+        app:arrowMarginRight="12sp"
+        app:explainText="sdf"
+        app:explainTextMarginLeft="12dp"
+        app:explainTextSize="12sp"
+        app:isShowIcon="false"
+        app:isShowSubTitles="false"
+        app:isShowType="arrowType"
+        app:titlesText="不带图标的按钮"
+        app:titlesTextColor="@color/common_mine_text_color"
+        app:titlesTextMarginLeft="12sp"
+        app:titlesTextMarginRight="12sp"
+        app:titlesTextSize="14sp" />
+
+    <com.ql.dev.library.TitleNavView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_12"
+        app:arrowMarginLeft="12sp"
+        app:arrowMarginRight="12sp"
+        app:explainText="sdf"
+        app:explainTextMarginLeft="12dp"
+        app:explainTextSize="12sp"
+        app:isShowIcon="false"
+        app:isShowSubTitles="false"
+        app:isShowType="arrowType"
+        app:titlesText="不带图标的按钮"
+        app:showDescType="horizontal"
+        app:titlesTextColor="@color/common_mine_text_color"
+        app:titlesTextMarginLeft="12sp"
+        app:titlesTextMarginRight="12sp"
+        app:titlesTextSize="14sp" />
+
+    <com.ql.dev.library.TitleNavView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_12"
+        app:arrowMarginRight="12sp"
+        app:isShowIcon="false"
+        app:isShowSubTitles="true"
+        app:isShowType="arrowType"
+        app:subTitlesMarginRight="@dimen/space_8"
+        app:subTitlesText="0.00byte"
+        app:subTitlesTextColor="@color/common_edittext_color"
+        app:subTitlesTextSize="14sp"
+        app:titlesText="清除缓存"
+        app:titlesTextColor="@color/common_mine_text_color"
+        app:titlesTextMarginLeft="12sp"
+        app:titlesTextMarginRight="12sp"
+        app:titlesTextSize="14sp" />
+
+    <com.ql.dev.library.TitleNavView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_12"
+        app:arrowMarginRight="@dimen/space_16"
+        app:iconMarginLeft="16dp"
+        app:iconMarginRight="12dp"
+        app:iconResource="@mipmap/icon_tixinmingxi_mywallet"
+        app:isShowType="switchType"
+        app:switchOpen="true"
+        app:titlesText="带图标的按钮二"
+        app:titlesTextColor="#08131f"
+        app:titlesTextSize="@dimen/space_14" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_sp_12"
+        android:orientation="horizontal">
+
+        <com.ql.dev.library.TitleNavView
+            android:id="@+id/prlLawyerWallet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:iconMarginBottom="8dp"
+            app:iconResource="@mipmap/icon_tixinmingxi_mywallet"
+            app:isShowSubTitles="true"
+            app:navHeight="80dp"
+            app:navViewType="vertical"
+            app:subTitlesText="¥0.00"
+            app:subTitlesTextColor="#fe7e00"
+            app:subTitlesTextSize="14sp"
+            app:titlesText="按钮一"
+            app:titlesTextColor="@color/common_mine_text_color"
+            app:titlesTextSize="14sp" />
+
+        <View
+            android:layout_width="@dimen/split_one_pixels"
+            android:layout_height="match_parent"
+            android:background="@color/shallow_mine_line" />
+
+        <com.ql.dev.library.TitleNavView
+            android:id="@+id/tnvRankingList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:arrowMarginLeft="12sp"
+            app:arrowMarginRight="12sp"
+            app:iconMarginBottom="8dp"
+            app:iconResource="@mipmap/icon_tixinmingxi_mywallet"
+            app:isShowSubTitles="true"
+            app:navHeight="80dp"
+            app:navViewType="vertical"
+            app:subTitlesText="副标题"
+            app:titlesText="标题"
+            app:titlesTextColor="@color/common_mine_text_color"
+            app:titlesTextSize="14sp" />
+
+        <View
+            android:layout_width="@dimen/split_one_pixels"
+            android:layout_height="match_parent"
+            android:background="@color/shallow_mine_line" />
+
+        <com.ql.dev.library.TitleNavView
+            android:id="@+id/tnvUserEvaluate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:arrowMarginLeft="12sp"
+            app:arrowMarginRight="12sp"
+            app:iconMarginBottom="8dp"
+            app:iconMarginLeft="12dp"
+            app:iconMarginRight="12dp"
+            app:iconResource="@mipmap/icon_tixinmingxi_mywallet"
+            app:isShowDotType="dot"
+            app:isShowIcon="true"
+            app:isShowSubTitles="false"
+            app:navHeight="80dp"
+            app:navViewType="vertical"
+            app:titlesText="带红点提示标题"
+            app:titlesTextColor="@color/common_mine_text_color"
+            app:titlesTextSize="14sp" />
+
+    </LinearLayout>
+</LinearLayout>
