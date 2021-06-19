@@ -1,11 +1,11 @@
 # TitleNavigationView
 
-[![Release](https://jitpack.io/v/quan356270259/TitleNavigationView.svg)](https://jitpack.io/v/quan356270259/TitleNavigationView.svg)
+[![Release](https://jitpack.io/v/com.gitee.quanguanzhou/TitleNavigationView.svg)](https://jitpack.io/v/com.gitee.quanguanzhou/TitleNavigationView.svg)
 
 #### 简介
 一款在我的页面与设备页面使用频率较高的组合控件，提高了高发的效率。
 
-#### GitHub 地址：[TitleNavigationView](https://gitee.com/quanguanzhou/TitleNavigationView)
+#### Gitee 地址：[TitleNavigationView](https://gitee.com/quanguanzhou/TitleNavigationView)
 #### 先看预览图
 
 <img src="./doc/QQ%E6%88%AA%E5%9B%BE20181009162952.png" alt="我是缩小后的图"/>
@@ -21,7 +21,7 @@
 #### 应用级别 build.gradle
 ```xml
     dependencies {
-        implementation 'com.github.quan356270259:TitleNavigationView:v1.0'
+        implementation 'com.gitee.quanguanzhou:TitleNavigationView:v2.0'
     }
 ```
 #### Maven
@@ -35,9 +35,9 @@
 
     <!-- <dependencies> section of pom.xml -->
     <dependency>
-        <groupId>com.github.quan356270259</groupId>
+        <groupId>com.gitee.quanguanzhou</groupId>
         <artifactId>TitleNavigationView</artifactId>
-        <version>v1.0</version>
+        <version>v2.0</version>
     </dependency>
 ```
 #### 布局上使用
