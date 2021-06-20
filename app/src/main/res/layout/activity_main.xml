@@ -47,7 +47,7 @@
         app:isShowSubTitles="true"
         app:subTitlesText="ssssss"
         app:isShowType="arrowType"
-        app:titlesText="不带图标的按钮"
+        app:titlesText="带图标的按钮"
         app:titlesTextColor="@color/common_mine_text_color"
         app:titlesTextMarginLeft="12sp"
         app:titlesTextMarginRight="12sp"

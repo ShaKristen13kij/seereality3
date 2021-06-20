@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.ql.dev.library.SwitchView;
 import com.ql.dev.library.TitleNavView;
 
 /**
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initMainView() {
-        TitleNavView  navView = findViewById(R.id.titleNav);
+        final TitleNavView  navView = findViewById(R.id.titleNav);
         navView.setTitleNavOnClickListener(new View.OnClickListener() {//点击事件
             @Override
             public void onClick(View v) {
@@ -30,13 +31,13 @@ public class MainActivity extends AppCompatActivity {
         });
         navView.setTitleNavOnClickListener(new TitleNavView.TitleNavSwitchViewCallback(){//
             @Override
-            public void TitleNavSwitchViewOnCallback() {
-                super.TitleNavSwitchViewOnCallback();
+            public void TitleNavSwitchViewOnCallback(SwitchView svStartPage) {
+                super.TitleNavSwitchViewOnCallback(svStartPage);
             }
 
             @Override
-            public void TitleNavSwitchViewOffCallback() {
-                super.TitleNavSwitchViewOffCallback();
+            public void TitleNavSwitchViewOffCallback(SwitchView svStartPage) {
+                super.TitleNavSwitchViewOffCallback(svStartPage);
             }
         });
         navView.getSwitchViewState();//1:关闭状态、 2:state prepare to on、3:state prepare to off、4:开启状态

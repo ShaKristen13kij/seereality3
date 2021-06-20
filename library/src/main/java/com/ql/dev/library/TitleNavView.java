@@ -471,15 +471,19 @@ public class TitleNavView extends LinearLayout {
     public static class TitleNavSwitchViewCallback {
         /**
          * SwitchView为打开时的回调
+         * @param svStartPage
          */
-        public void TitleNavSwitchViewOnCallback() {
+        public void TitleNavSwitchViewOnCallback(SwitchView svStartPage) {
+            svStartPage.toggleSwitch(true);
         }
 
 
         /**
          * SwitchView为关闭时的回调
+         * @param svStartPage
          */
-        public void TitleNavSwitchViewOffCallback() {
+        public void TitleNavSwitchViewOffCallback(SwitchView svStartPage) {
+            svStartPage.toggleSwitch(false);
         }
 
     }
@@ -503,7 +507,7 @@ public class TitleNavView extends LinearLayout {
                     if (titleNavSwitchViewCallback == null) {
                         throw new NullPointerException("titleNavSwitchViewCallback is not null,please call setTitleNavOnClickListener() before");
                     }else {
-                        titleNavSwitchViewCallback.TitleNavSwitchViewOnCallback();
+                        titleNavSwitchViewCallback.TitleNavSwitchViewOnCallback(svStartPage);
                     }
                 }
 
@@ -512,7 +516,7 @@ public class TitleNavView extends LinearLayout {
                     if (titleNavSwitchViewCallback == null) {
                         throw new NullPointerException("titleNavSwitchViewCallback is not null,please call setTitleNavOnClickListener() before");
                     }else {
-                        titleNavSwitchViewCallback.TitleNavSwitchViewOffCallback();
+                        titleNavSwitchViewCallback.TitleNavSwitchViewOffCallback(svStartPage);
                     }
                 }
             });
