@@ -199,25 +199,10 @@ public class TitleNavView extends LinearLayout {
             }else{
                 ivIcon.setPadding((int)iconPaddingLeft,(int)iconPaddingTop,(int)iconPaddingRight,(int)iconPaddingBottom);
             }
-            if(scaleType != -1){
-                if(scaleType == 0){
-                    ivIcon.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                }else if(scaleType ==1){
-                    ivIcon.setScaleType(ImageView.ScaleType.FIT_START);
-                }else if(scaleType ==2){
-                    ivIcon.setScaleType(ImageView.ScaleType.FIT_XY);
-                }else if(scaleType ==3){
-                    ivIcon.setScaleType(ImageView.ScaleType.FIT_END);
-                }else if(scaleType ==4){
-                    ivIcon.setScaleType(ImageView.ScaleType.MATRIX);
-                }else if(scaleType ==5){
-                    ivIcon.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-                }else if(scaleType ==6){
-                    ivIcon.setScaleType(ImageView.ScaleType.CENTER);
-                }else if(scaleType ==7){
-                    ivIcon.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                }
+            if(scaleType != -1) {
+                setScaleType(scaleType);
             }
+
             if(isShowDotType == 0){ // 显示红点
                 tvPicTips.setVisibility(VISIBLE);
                 tvPicTips.setImageResource(R.drawable.red_dot);
@@ -290,41 +275,7 @@ public class TitleNavView extends LinearLayout {
             tvTitle.setLayoutParams(layoutParams);
             //设置标题文字颜色
             tvTitle.setTextColor(titlesTextColor);
-            //是否显示箭头
-            if (isShowType == 0) { // 显示箭头
-                ivArrow.setVisibility(VISIBLE);
-                svStartPage.setVisibility(GONE);
-                tvFont.setVisibility(GONE);
-                //设置箭头的边距
-                LayoutParams lp = (LayoutParams) ivArrow.getLayoutParams();
-                lp.setMargins((int) arrowMarginLeft, 0, (int) arrowMarginRight, 0);
-                ivArrow.setLayoutParams(lp);
-            } else if (isShowType == 1) { // 显示开关
-                ivArrow.setVisibility(GONE);
-                svStartPage.setVisibility(VISIBLE);
-                tvFont.setVisibility(GONE);
-                if(switchOpen){
-                    svStartPage.setState(true);
-                }
-                //设置开关的边距
-                LayoutParams lp = (LayoutParams) svStartPage.getLayoutParams();
-                lp.setMargins((int) arrowMarginLeft, 0, (int) arrowMarginRight, 0);
-                svStartPage.setLayoutParams(lp);
-                switchViewListener();
-            } else if (isShowType == 2) { // 显示文字
-                ivArrow.setVisibility(GONE);
-                svStartPage.setVisibility(GONE);
-                tvFont.setVisibility(VISIBLE);
-                tvFont.setText(titleRightText);
-                //设置开关的边距
-                LayoutParams lp = (LayoutParams) tvFont.getLayoutParams();
-                lp.setMargins((int) arrowMarginLeft, 0, (int) arrowMarginRight, 0);
-                tvFont.setLayoutParams(lp);
-            } else if (isShowType == 3) { // 都不显示
-                ivArrow.setVisibility(GONE);
-                svStartPage.setVisibility(GONE);
-                tvFont.setVisibility(GONE);
-            }
+            setShowType(isShowType);
             //是否显示副标题
             if (isShowSubTitles) {
                 tvSubTitle.setVisibility(VISIBLE);
@@ -371,24 +322,8 @@ public class TitleNavView extends LinearLayout {
             }else{
                 ivVerticalIcon.setPadding((int)iconPaddingLeft,(int)iconPaddingTop,(int)iconPaddingRight,(int)iconPaddingBottom);
             }
-            if(scaleType != -1){
-                if(scaleType == 0){
-                    ivVerticalIcon.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                }else if(scaleType ==1){
-                    ivVerticalIcon.setScaleType(ImageView.ScaleType.FIT_START);
-                }else if(scaleType ==2){
-                    ivVerticalIcon.setScaleType(ImageView.ScaleType.FIT_XY);
-                }else if(scaleType ==3){
-                    ivVerticalIcon.setScaleType(ImageView.ScaleType.FIT_END);
-                }else if(scaleType ==4){
-                    ivVerticalIcon.setScaleType(ImageView.ScaleType.MATRIX);
-                }else if(scaleType ==5){
-                    ivVerticalIcon.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-                }else if(scaleType ==6){
-                    ivVerticalIcon.setScaleType(ImageView.ScaleType.CENTER);
-                }else if(scaleType ==7){
-                    ivVerticalIcon.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                }
+            if(scaleType != -1) {
+                setScaleType(scaleType);
             }
             //设置图片的左右边距
             RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) ivVerticalIcon.getLayoutParams();
@@ -462,6 +397,57 @@ public class TitleNavView extends LinearLayout {
     }
 
     /**
+     * 获取显示的类型
+     * @return （1：显示箭头，2：显示开关，3显示文字，4：都不显示）
+     */
+    public int getShowType(){
+        return isShowType;
+    }
+
+    /**
+     * 设置显示类型
+     * @param isShowType （1：显示箭头，2：显示开关，3显示文字，4：都不显示）
+     */
+    public void setShowType(int isShowType){
+        this.isShowType = isShowType;
+        //是否显示箭头
+        if (isShowType == 0) { // 显示箭头
+            ivArrow.setVisibility(VISIBLE);
+            svStartPage.setVisibility(GONE);
+            tvFont.setVisibility(GONE);
+            //设置箭头的边距
+            LayoutParams lp = (LayoutParams) ivArrow.getLayoutParams();
+            lp.setMargins((int) arrowMarginLeft, 0, (int) arrowMarginRight, 0);
+            ivArrow.setLayoutParams(lp);
+        } else if (isShowType == 1) { // 显示开关
+            ivArrow.setVisibility(GONE);
+            svStartPage.setVisibility(VISIBLE);
+            tvFont.setVisibility(GONE);
+            if(switchOpen){
+                svStartPage.setState(true);
+            }
+            //设置开关的边距
+            LayoutParams lp = (LayoutParams) svStartPage.getLayoutParams();
+            lp.setMargins((int) arrowMarginLeft, 0, (int) arrowMarginRight, 0);
+            svStartPage.setLayoutParams(lp);
+            switchViewListener();
+        } else if (isShowType == 2) { // 显示文字
+            ivArrow.setVisibility(GONE);
+            svStartPage.setVisibility(GONE);
+            tvFont.setVisibility(VISIBLE);
+            tvFont.setText(titleRightText);
+            //设置开关的边距
+            LayoutParams lp = (LayoutParams) tvFont.getLayoutParams();
+            lp.setMargins((int) arrowMarginLeft, 0, (int) arrowMarginRight, 0);
+            tvFont.setLayoutParams(lp);
+        } else if (isShowType == 3) { // 都不显示
+            ivArrow.setVisibility(GONE);
+            svStartPage.setVisibility(GONE);
+            tvFont.setVisibility(GONE);
+        }
+    }
+
+    /**
      * 点击事件
      */
     public void setTitleNavOnClickListener(OnClickListener onClickListener) {
@@ -477,7 +463,6 @@ public class TitleNavView extends LinearLayout {
             svStartPage.toggleSwitch(true);
         }
 
-
         /**
          * SwitchView为关闭时的回调
          * @param svStartPage
@@ -485,7 +470,6 @@ public class TitleNavView extends LinearLayout {
         public void TitleNavSwitchViewOffCallback(SwitchView svStartPage) {
             svStartPage.toggleSwitch(false);
         }
-
     }
 
     private TitleNavSwitchViewCallback titleNavSwitchViewCallback;
@@ -526,18 +510,6 @@ public class TitleNavView extends LinearLayout {
     }
 
     /**
-     * getState为
-     *          1:关闭状态
-     *          2:state prepare to on
-     *          3:state prepare to off
-     *          4:开启状态
-     * @return
-     */
-    public int getSwitchViewState(){
-        return svStartPage.getState();
-    }
-
-    /**
      *
      * @param rightText
      */
@@ -551,6 +523,18 @@ public class TitleNavView extends LinearLayout {
      */
     public void setSwitchViewState(boolean onOff){
         svStartPage.setState(onOff);
+    }
+
+    /**
+     * getState为
+     *          1:关闭状态
+     *          2:state prepare to on
+     *          3:state prepare to off
+     *          4:开启状态
+     * @return
+     */
+    public int getSwitchViewState(){
+        return svStartPage.getState();
     }
 
     public void setSwitchToggle(boolean onOff){
@@ -589,7 +573,6 @@ public class TitleNavView extends LinearLayout {
             params.setMargins(marginLeft, 0, 0, 0);
             ivVerticalIcon.setLayoutParams(params);
         }
-
     }
 
     /**
@@ -800,6 +783,20 @@ public class TitleNavView extends LinearLayout {
     }
 
     /**
+     * 获取附属标题是否显示和隐藏
+     * @return
+     */
+    public int getSubTitleVisibility(){
+        int visibility = 0;
+        if(navViewType ==0) {
+            visibility = tvSubTitle.getVisibility();
+        }else{
+            visibility = tvVerticalSubTitle.getVisibility();
+        }
+        return visibility;
+    }
+
+    /**
      * 设置附属标题的文字
      */
     public void setSubTitleText(String text) {
@@ -811,6 +808,20 @@ public class TitleNavView extends LinearLayout {
         }else{
             tvVerticalSubTitle.setText(text);
         }
+    }
+
+    /**
+     * 获取附属标题的文字
+     * @return
+     */
+    public String getSubTitleText(){
+        String values = "";
+        if(navViewType == 0) {
+            values = tvSubTitle.getText().toString();
+        }else{
+            values = tvVerticalSubTitle.getText().toString();
+        }
+        return values;
     }
 
     /**
