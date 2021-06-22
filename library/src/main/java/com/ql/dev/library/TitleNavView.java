@@ -87,6 +87,15 @@ public class TitleNavView extends LinearLayout {
     private float iconPaddingBottom;
     private int scaleType;
 
+    //(1：显示箭头，2：显示开关，3显示文字，4：都不显示）
+    public static final int SHOWTYPE_ARRAW = 0;
+
+    public static final int SHOWTYPE_SWITCH= 1;
+
+    public static final int SHOWTYPE_FONT= 2;
+
+    public static final int SHOWTYPE_NONE= 3;
+
 
     public TitleNavView(Context context) {
         super(context, null);
@@ -163,21 +172,21 @@ public class TitleNavView extends LinearLayout {
     }
 
     private void initWidget() {
-        ivIcon = (ImageView) findViewById(R.id.ivIcon);
-        tvTitle = (TextView) findViewById(R.id.tvTitle);
-        tvExplain = (TextView) findViewById(R.id.tvExplain);
-        tvSubTitle = (TextView) findViewById(R.id.tvSubTitle);
-        ivArrow = (ImageView) findViewById(R.id.ivArrow);
-        svStartPage = (SwitchView) findViewById(R.id.svStartPage);
-        tvFont = (TextView) findViewById(R.id.tvFont);
-        llTitleNav = (LinearLayout) findViewById(R.id.llTitleNav);
-        llHorzontal = (LinearLayout) findViewById(R.id.llHorzontal);
-        llVertical = (LinearLayout) findViewById(R.id.llVertical);
-        ivVerticalIcon = (ImageView) findViewById(R.id.ivVerticalIcon);
-        tvVerticalTitle = (TextView) findViewById(R.id.tvVerticalTitle);
-        tvVerticalSubTitle = (TextView) findViewById(R.id.tvVerticalSubTitle);
-        tvVerticalCusPicTips = (ImageView) findViewById(R.id.tvVerticalCusPicTips);
-        tvPicTips = (ImageView) findViewById(R.id.tvPicTips);
+        ivIcon =  findViewById(R.id.ivIcon);
+        tvTitle =  findViewById(R.id.tvTitle);
+        tvExplain =  findViewById(R.id.tvExplain);
+        tvSubTitle =  findViewById(R.id.tvSubTitle);
+        ivArrow =  findViewById(R.id.ivArrow);
+        svStartPage =  findViewById(R.id.svStartPage);
+        tvFont =  findViewById(R.id.tvFont);
+        llTitleNav =  findViewById(R.id.llTitleNav);
+        llHorzontal =  findViewById(R.id.llHorzontal);
+        llVertical =  findViewById(R.id.llVertical);
+        ivVerticalIcon =  findViewById(R.id.ivVerticalIcon);
+        tvVerticalTitle =  findViewById(R.id.tvVerticalTitle);
+        tvVerticalSubTitle =  findViewById(R.id.tvVerticalSubTitle);
+        tvVerticalCusPicTips =  findViewById(R.id.tvVerticalCusPicTips);
+        tvPicTips =  findViewById(R.id.tvPicTips);
         tvTitleAfter = findViewById(R.id.tvTitleAfter);
     }
 
@@ -411,7 +420,7 @@ public class TitleNavView extends LinearLayout {
     public void setShowType(int isShowType){
         this.isShowType = isShowType;
         //是否显示箭头
-        if (isShowType == 0) { // 显示箭头
+        if (isShowType == SHOWTYPE_ARRAW) { // 显示箭头
             ivArrow.setVisibility(VISIBLE);
             svStartPage.setVisibility(GONE);
             tvFont.setVisibility(GONE);
@@ -419,7 +428,7 @@ public class TitleNavView extends LinearLayout {
             LayoutParams lp = (LayoutParams) ivArrow.getLayoutParams();
             lp.setMargins((int) arrowMarginLeft, 0, (int) arrowMarginRight, 0);
             ivArrow.setLayoutParams(lp);
-        } else if (isShowType == 1) { // 显示开关
+        } else if (isShowType == SHOWTYPE_SWITCH) { // 显示开关
             ivArrow.setVisibility(GONE);
             svStartPage.setVisibility(VISIBLE);
             tvFont.setVisibility(GONE);
@@ -431,7 +440,7 @@ public class TitleNavView extends LinearLayout {
             lp.setMargins((int) arrowMarginLeft, 0, (int) arrowMarginRight, 0);
             svStartPage.setLayoutParams(lp);
             switchViewListener();
-        } else if (isShowType == 2) { // 显示文字
+        } else if (isShowType == SHOWTYPE_FONT) { // 显示文字
             ivArrow.setVisibility(GONE);
             svStartPage.setVisibility(GONE);
             tvFont.setVisibility(VISIBLE);
@@ -440,7 +449,7 @@ public class TitleNavView extends LinearLayout {
             LayoutParams lp = (LayoutParams) tvFont.getLayoutParams();
             lp.setMargins((int) arrowMarginLeft, 0, (int) arrowMarginRight, 0);
             tvFont.setLayoutParams(lp);
-        } else if (isShowType == 3) { // 都不显示
+        } else if (isShowType == SHOWTYPE_NONE) { // 都不显示
             ivArrow.setVisibility(GONE);
             svStartPage.setVisibility(GONE);
             tvFont.setVisibility(GONE);
@@ -800,6 +809,7 @@ public class TitleNavView extends LinearLayout {
      * 设置附属标题的文字
      */
     public void setSubTitleText(String text) {
+        this.subTitlesText = text;
         if (StringUtils.isEmpty(text)) {
             return;
         }
@@ -815,13 +825,7 @@ public class TitleNavView extends LinearLayout {
      * @return
      */
     public String getSubTitleText(){
-        String values = "";
-        if(navViewType == 0) {
-            values = tvSubTitle.getText().toString();
-        }else{
-            values = tvVerticalSubTitle.getText().toString();
-        }
-        return values;
+        return subTitlesText;
     }
 
     /**
@@ -911,6 +915,14 @@ public class TitleNavView extends LinearLayout {
             }
             tvExplain.setVisibility(GONE);
         }
+    }
+
+    /**
+     * 获取功能性描述文字
+     * @return
+     */
+    public String getExplainText(){
+        return explainText;
     }
 
     /**
