@@ -3,7 +3,7 @@
 [![Release](https://jitpack.io/v/com.gitee.quanguanzhou/TitleNavigationView.svg)](https://jitpack.io/v/com.gitee.quanguanzhou/TitleNavigationView.svg)
 
 #### 简介
-一款在我的页面与设备页面使用频率较高的组合控件，提高了高发的效率。
+一款在我的页面与设备页面使用频率较高的组合控件，提高了开发的效率。
 
 #### Gitee 地址：[TitleNavigationView](https://gitee.com/quanguanzhou/TitleNavigationView)
 #### 先看预览图
@@ -247,7 +247,8 @@
 
 #### 首次更新Github，如果您觉得该库对您有帮助，可以考虑给点水钱
 <img src="./doc/IMG_5514.PNG" width="340" height="450" alt="我是缩小后的图"/>
-<img src="./doc/IMG_4845.JPG" width="340" height="400" alt="我是缩小后的图"/><img src="./doc/IMG_4846.JPG" width="350" height="500" alt="我是缩小后的图"/>
+<img src="./doc/IMG_4845.JPG" width="340" height="400" alt="我是缩小后的图"/>
+<img src="./doc/IMG_4846.JPG" width="350" height="500" alt="我是缩小后的图"/>
 
 
 
