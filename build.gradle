@@ -4,10 +4,10 @@ buildscript {
     
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.0'
+        classpath 'com.android.tools.build:gradle:4.2.2'
         
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -18,14 +18,19 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 ext {
-    compileSdk = 28
-    minSdk = 15
-    targetSdk = 28
-    dependenciesVersion = '28.0.0'
+    compileSdk = 29
+    compileSdkVersion = 29
+    buildToolsVersion = "29.0.3"
+    dependenciesVersion = "1.2.0"
+    minSdk = 21
+    targetSdk= 28
+    versionCode = 1
+    versionName = "1.0.0"
+
 }
 
 task clean(type: Delete) {
